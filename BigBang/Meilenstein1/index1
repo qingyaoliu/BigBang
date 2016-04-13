@@ -1,1 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" charset="utf-8"/>
+  <title>BigBang</title>
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="design/index.css">
+</head>
+
+<body>
+        <header>
+                <h3 style="text-align: center">
+		            <a href="home.html"> home</a>  
+		            <a href="#addplayer"> add player</a> 
+		            <a href="players.html"> players</a> 
+		            </h3>
+		
+		            <div>
+			                  <h1><span>BigBang</span></h1>
+		  	        </div>
+	        </header>
+
+	      <main>
+	            	<section id="addplayer">
+
+
+
+
+
+
+		            </section>
+	      </main>
+
+        <footer id="footer">
+	              <img src="img/bigbang.jpg"/>
+      	</footer>
+      	<script src="design/index.js"></script>
+</body>
+</html>
+
 
