@@ -1,57 +1,105 @@
-<!doctype html>
-<html lang="en">
+﻿<!DOCTYPE html lang="de">
+<html>
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" charset="utf-8"/>
-  <title>BigBang</title>
-  <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="design/index.css">
+  <title>index.html</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="mystyle.css" type="text/css" />
+
 </head>
 
 <body>
-        <header>
-                <h3 style="text-align: center">
-			<a href="home.html"> home</a>  
-			<a href="#addplayer"> add player</a> 
-			<a href="players.html"> players</a> 
-		</h3>
-		
-		<div>
-			<h1>BigBang</h1>
-		</div>
-	</header>
+<!--das obere Teil-->
+  <div class="topT">
+	<span class="logo"><img src="logo.png" alt="das ist ein Logo" /></span>
+	<span class="verein">Bigbang Basketball Club</span>
+	<span class="knopf">
+	    <a href="C:\Users\student\git\BigBang\BigBang\Meilenstein1\BigBang\BigBang\Meilenstein1\home.html">home&nbsp&nbsp&nbsp</a>
+	    <a href="E:\Hauptstudium\WAW\addplayer.html">add player&nbsp&nbsp&nbsp</a>
+	    <a href="C:\Users\student\git\BigBang\BigBang\Meilenstein1\BigBang\BigBang\Meilenstein1\players.html">players</a>
+	</span>
+  </div>
+<!--das linke-untere Teil-->
+  <div class="leftT">	
+	<img src="basketball.png" alt="das ist ein Bild" height="358" width="537"/>
+  </div>
 
-	<main>
-		<section id="addplayer">
+<!--das rechte-untere Teil-->
+  <div class="rightT">
+	<form name="input" action="http://martinakraus.net/createPlayer.php" method="get">
+		<fieldset>
+		<table border="0" cellpadding="10" width="80%" >
+			<legend>HERZLICH WILLKOMMEN!</legend>
+			<tr >
+			    <td>Vorname</td>
+			    <td><input name="vorname" type="text" maxlength="25"></td>    
+			</tr>
+
+			<tr >
+			    <td>Nachname:</td>
+			    <td><input name="name" type="text" maxlength="25"></td>    
+			</tr>
+			<tr >
+			    <td>Verein:</td>
+			    <td><input name="verein" type="text" maxlength="25"></td>    
+			</tr>
+
+			<tr >
+			    <td>Headcoach:</td>
+			    <td><input name="hcoach" type="text" maxlength="25"></td>    
+			</tr>
+
+			<tr >
+			    <td>Assistant Coach:</td>
+			    <td><input name="acoach" type="text" maxlength="25"></td>    
+			</tr>
+
+			<tr >
+			    <td>Aktiv:</td>
+			    <td><input name="aktiv" type="Checkbox" value="ja">&nbspja</td> 
+			</tr>
+
+			<tr >
+			    <td>Position:</td>
+			    <td><form>
+				<select name="position" type="dropdownmenü">
+				<option value="Center">Center</option>
+				<option value="Guard">Guard</option>
+				<option value="Power Forward">Power Forward</option>
+				<option value="Wing" selected="selected" >Wing</option>
+				<option value="Small Forward">Small Forward</option>
+				</select>
+				<form>
+			     </td>    
+			</tr>
+
+			<tr >
+			    <td>Rückennumer:</td>
+			    <td><input name="number" type="number" min="1" max="99"></td>    
+			</tr>
+
+			<tr >
+			    <td>Geburtsjahr:</td>
+			    <td><input name="jahr" type="number" min="1916" max="2016"></td>    
+			</tr>
+
+			<tr >
+			    <td>Favorit markieren:</td>
+			    <td><input name="favorit" type="checkbox" maxlength="25">&nbspfavorit</td>    
+			</tr>
 			
-			<form action="http://martinakraus.net/createPlayer.php" method="get">
-				 Vorname: <input type="text" name="vorname" required><br>
-				 Nachname: <input type="text" name="name" required><br>
-				 Verein: <input type="text" name="verein" required><br>
-				 Headcoach: <input type="text" name="hcoach" required><br>
-				 Assistant Coach: <input type="text" name="acoach" required><br>
-				 Aktiv: <input type="checkbox" name="aktiv"/><br/>
-				 Position: <select name="position" size="1" required> 
-							<option value="center">Center</option >
-							<option value="guard">Guard</option>
-							<option value="power forward">Power Forwards</option>
-							<option value="wing" selected="selected"> Wing </option>
-							<option value="small forward">Small Forward</option> 
-							</select> <br> 
-						
-				Geburtsjahr: <input type="number" name="jahr" max="2016" required><br>
-				Rückennummer: <input type="number" name="number"  min="0" required><br>
-				Favorit markieren: <input type="checkbox" name="favorit" ><br>
-				<input type="submit">
-				
-			</form>
-
-		</section>
-	</main>
-
-        <footer>
-	      <img src="bigbanglogo.png" style= "float:right;"/>
-      	</footer>
+			<tr>
+			    <td></td>
+			    <td colspan="2" >
+			    <input type="submit" value="submit">
+			    <input type="reset" value="reset">
+			    </td>
+			</tr>
+		</table>
+		</fieldset>
+	<form>
+  </div>
 </body>
 </html>
-
 
