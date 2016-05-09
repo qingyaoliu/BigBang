@@ -1,6 +1,6 @@
 function validateForm() {
 
-    var regexNames = /^[a-z??¨¹]+$/i;
+    var regexNames = /^[a-zäöü]+$/i;
 
     var vorname = document.getElementsByName('vorname')[0].value;
     var nachname = document.getElementsByName('name')[0].value;
@@ -11,7 +11,7 @@ function validateForm() {
     if (!vorname.match(regexNames) || !nachname.match(regexNames) || !verein.match(regexNames) 
         || !headcoach.match(regexNames) || !assistantcoach.match(regexNames)) {
 
-        alert("Einige Eingaben sind fehlerhaft. Bitte ¨¹berpr¨¹fen Sie ihre Eingaben");
+        alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben");
         return false;
 
     }else{
