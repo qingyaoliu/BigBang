@@ -33,26 +33,26 @@
 			<legend>HERZLICH WILLKOMMEN!</legend>
 			<tr >
 			    <td>Vorname</td>
-			    <td><input name="vorname" type="text" maxlength="25"></td>    
+			    <td><input name="vorname" type="text" maxlength="25" required></td>    
 			</tr>
 
 			<tr >
 			    <td>Nachname:</td>
-			    <td><input name="name" type="text" maxlength="25"></td>    
+			    <td><input name="name" type="text" maxlength="25" required></td>    
 			</tr>
 			<tr >
 			    <td>Verein:</td>
-			    <td><input name="verein" type="text" maxlength="25"></td>    
+			    <td><input name="verein" type="text" maxlength="25" required></td>    
 			</tr>
 
 			<tr >
 			    <td>Headcoach:</td>
-			    <td><input name="hcoach" type="text" maxlength="25"></td>    
+			    <td><input name="hcoach" type="text" maxlength="25" required></td>    
 			</tr>
 
 			<tr >
 			    <td>Assistant Coach:</td>
-			    <td><input name="acoach" type="text" maxlength="25"></td>    
+			    <td><input name="acoach" type="text" maxlength="25" required></td>    
 			</tr>
 
 			<tr >
@@ -63,7 +63,7 @@
 			<tr >
 			    <td>Position:</td>
 			    <td><form>
-				<select name="position" type="dropdownmenü">
+				<select name="position" type="dropdownmenü" required>
 				<option value="Center">Center</option>
 				<option value="Guard">Guard</option>
 				<option value="Power Forward">Power Forward</option>
@@ -76,12 +76,12 @@
 
 			<tr >
 			    <td>Rückennumer:</td>
-			    <td><input name="number" type="number" min="1" max="99"></td>    
+			    <td><input name="number" type="number" min="4" max="15" required></td>    
 			</tr>
 
 			<tr >
 			    <td>Geburtsjahr:</td>
-			    <td><input name="jahr" type="number" min="1916" max="2016"></td>    
+			    <td><input name="jahr" type="number" min="0" max="2016" required></td>    
 			</tr>
 
 			<tr >
