@@ -18,7 +18,8 @@ function validateForm() {
         return true;
          }
     }
-    
+}
+
 function sendForm(form) {
     if (validateForm()){
  	var formData = new FormData(form);
