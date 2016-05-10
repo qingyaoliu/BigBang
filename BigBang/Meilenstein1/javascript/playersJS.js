@@ -9,7 +9,7 @@
 	    }
 	};
 	xhr.send();
-	}
+	
 
  window.onload=function(){
 	var jsonResponse = xmlHttpReq.responseText;
