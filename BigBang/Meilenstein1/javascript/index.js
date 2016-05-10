@@ -24,15 +24,16 @@ function validateForm() {
 function sendForm(form) {
     if (validateForm()){
  	var formData = new FormData(form);
+ 	
         var xhr = new XMLHttpRequest();
-		xhr.open("POST","http://139.59.134.26/api/players", true);
-		xhr.onload = function(e) {
-		  if (e == true) {
-                        alert("Daten werden erfolgreich gesendet");
+	xhr.open("POST","http://139.59.134.26/api/players", true);
+	xhr.onload = function(e) {
+		if (e == true) {
+			alert("Daten werden erfolgreich gesendet");
                   } else {
 			alert("Error: Daten können nicht gesendet werden");
 		  }
-		};
-		xhr.send(formData);
+	};
+	xhr.send(formData);
     }
 }
