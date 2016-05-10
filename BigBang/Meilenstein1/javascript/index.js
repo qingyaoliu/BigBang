@@ -20,16 +20,19 @@ function validateForm() {
     }
 }
 
+//SENDEN VON DATEN
 function sendForm(form) {
     if (validateForm()){
  	var formData = new FormData(form);
- 
-        request('POST', 'http://139.59.134.26/', formData, function (success)) {
-            if (success == true) {
-                alert("Die Daten werden erfolgreich gesendet");
-            } else {
-                alert("Die Daten können nicht gesendet werden");
-            }
-        }
+    var xhr = new XMLHttpRequest();
+		xhr.open("POST","http://139.59.134.26/api/players", true);
+		xhr.onload = function(e) {
+		  if (e == true) {
+            alert("Daten werfolgreich gesendet");
+          } else {
+			alert("Error: Daten können nicht gesendet werden");
+		  }
+		};
+		xhr.send(formData);
     }
 }
