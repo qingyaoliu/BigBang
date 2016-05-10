@@ -35,64 +35,62 @@
 			<legend>HERZLICH WILLKOMMEN!</legend>
 			<tr >
 			    <td>Vorname</td>
-			    <td><input name="vorname" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required></td>    
+			    <td><label><input name="vorname" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
 			</tr>
 
 			<tr >
 			    <td>Nachname:</td>
-			    <td><input name="name" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required></td>    
+			    <td><label><input name="name" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
 			</tr>
 			<tr >
 			    <td>Verein:</td>
-			    <td><input name="verein" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required></td>    
+			    <td><label><input name="verein" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
 			</tr>
 
 			<tr >
 			    <td>Headcoach:</td>
-			    <td><input name="hcoach" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required></td>    
+			    <td><label><input name="hcoach" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
 			</tr>
 
 			<tr >
 			    <td>Assistant Coach:</td>
-			    <td><input name="acoach" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required></td>    
+			    <td><label><input name="acoach" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
 			</tr>
 
 			<tr >
 			    <td>Aktiv:</td>
-			    <td><input name="aktiv" type="Checkbox" value="ja">&nbspja</td> 
+			    <td><label><input name="aktiv" type="Checkbox" value="ja">&nbspja<label></td> 
 			</tr>
 
 			<tr >
 			    <td>Position:</td>
-			    <td><form>
+			    <td><label>
 				<select name="position" type="dropdownmenü" required>
-				<option value="Center">Center</option>
-				<option value="Guard">Guard</option>
-				<option value="Power Forward">Power Forward</option>
-				<option value="Wing" selected="selected" >Wing</option>
-				<option value="Small Forward">Small Forward</option>
+				    <option value="Center">Center</option>
+				    <option value="Guard">Guard</option>
+				    <option value="Power Forward">Power Forward</option>
+				    <option value="Wing" selected="selected" >Wing</option>
+				    <option value="Small Forward">Small Forward</option>
 				</select>
-				</form>
-			     </td>    
+			    <label></td>    
 			</tr>
 
 			<tr >
 			    <td>Rückennumer:</td>
-			    <td><input name="number" type="number" min="4" max="15" required></td>    
+			    <td><label><input name="number" type="number" min="4" max="15" required><label></td>    
 			</tr>
 
 			<tr >
 			    <td>Geburtsjahr:</td>
-			    <td><input name="jahr" type="number" min="0" max="2016" required></td>    
+			    <td><label><input name="jahr" type="number" min="0" max="2016" required><label></td>    
 			</tr>
 
 			<tr >
 			    <td>Favorit markieren:</td>
-			    <td><input name="favorit" type="checkbox" maxlength="25">&nbspfavorit</td>    
+			    <td><label><input name="favorit" type="checkbox" maxlength="25">&nbspfavorit<label></td>    
 			</tr>
 			
 			<tr>
-			    <td></td>
 			    <td colspan="2" >
 			    <input type="button" value="submit" onclick="sendForm(this.form)">
 			    <input type="button" value="reset">
