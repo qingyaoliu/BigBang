@@ -42,17 +42,18 @@ function sendForm(form) {
 }
 	
 
-//empfangen von Daten und anzeigen der Tabelle
+//empfangen von Daten und Aufbau der Tabelle
 function getPlayers(fav) {
 	var xhr = new XMLHttpRequest(); // new HttpRequest instance 
+	var link = "http://139.59.134.26/api/players";
 	var obFavPlayer = "";
 	if (fav) {
 		obFavPlayer = "?favorites=true";
 	}
-	xhr.open("GET", "http://139.59.134.26/api/players"+ obFavPlayer, true);
-	xhr.setRequestHeader("Content-Type","application/json");
+	xhr.open("GET", link + obFavPlayer, true);
+	xhr.setRequestHeader("Content-Type","application/json"); // dem Server mitteilen, welche Medientyp wir empfangen wollen
 	xhr.onload = function(e) {
-		var data = JSON.parse(this.response);
+		var data = JSON.parse(xhr.response); //Json-Objekt werden ausgelesen
 		buildTable(data);
 	}
 	xhr.send(null);
