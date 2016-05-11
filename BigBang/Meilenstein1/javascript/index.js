@@ -62,16 +62,16 @@ function getPlayers(fav) {
 //aufbau einer Tabelle
 function buildTable(dataArray) {
 	var arr = dataArray;
-	var table = document.getElementById("oldTable");
+	var table = document.getElementById("oldTable"); // Find a <table> element with id="oldTable":
 	
 	if (table.rows.length > 1) { 
         deleteOldTable(table);
         }
 
 	arr.forEach(function(object) {
-		var row = table.insertRow();
-		row.insertCell(0).innerHTML = object.vorname+ " " +object.name;
-		row.insertCell(1).innerHTML = object.club;
+		var row = table.insertRow(); // Create an empty <tr> element
+		row.insertCell(0).innerHTML = object.vorname+ " " +object.name; 
+		row.insertCell(1).innerHTML = object.club; 
 		row.insertCell(2).innerHTML = object.coach;
 		row.insertCell(3).innerHTML = object.position;
 		row.insertCell(4).innerHTML = object.number;
