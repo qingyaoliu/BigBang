@@ -7,8 +7,8 @@ function validateForm() {
     var verein = document.getElementsByName('verein')[0].value;
     var headcoach = document.getElementsByName('hcoach')[0].value;
     var assistantcoach = document.getElementsByName('acoach')[0].value;
-    var number = parseInt(document.getElementsByName('number')[0].value);
-    var jahr = parseInt(document.getElementsByName('jahr')[0].value);
+    var number = document.getElementsByName('number')[0].value;
+    var jahr = document.getElementsByName('jahr')[0].value;
 
     if (!vorname.match(regexNames) || !nachname.match(regexNames) || !verein.match(regexNames) 
         || !headcoach.match(regexNames) || !assistantcoach.match(regexNames) || !((number >= 4) && (number <= 15)) 
