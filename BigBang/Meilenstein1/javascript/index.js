@@ -28,11 +28,11 @@ function sendForm(form) {
         var xhr = new XMLHttpRequest();
 	xhr.open("POST","http://139.59.134.26/api/players", true);
 	xhr.onload = function(e) {
-	if (xhr.status == 200) {
+		if (xhr.status == 200) {
 			alert("OK: Daten werden erfolgreich gesendet");
                   } else {
 			alert("Error: Daten können nicht gesendet werden");
-		  }
+		}
 	};
 	xhr.send(formData);
     }
