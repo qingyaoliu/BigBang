@@ -70,7 +70,7 @@ function buildTable(dataArray) {
 
 	arr.forEach(function(object) {
 		var row = table.insertRow(); // Create an empty <tr> element
-		row.insertCell(0).innerHTML = object.vorname+ " " +object.name; 
+		row.insertCell(0).innerHTML = object.vorname+ " " +object.name; //insert cell(<td> Elem.), nämlich objekt, at the 1st Positon of row(<tr>),
 		row.insertCell(1).innerHTML = object.club; 
 		row.insertCell(2).innerHTML = object.coach;
 		row.insertCell(3).innerHTML = object.position;
