@@ -31,7 +31,7 @@ function sendForm(form) {
         var xhr = new XMLHttpRequest();
 	xhr.open("POST","http://139.59.134.26/api/players", true);
 	xhr.onload = function(e) {
-		if (xhr.status == 200) {
+		if (xhr.readyState == 4 && xhr.status == 200) {
 			alert("OK: Daten werden erfolgreich gesendet");
                   } else {
 			alert("Error: Daten können nicht gesendet werden");
@@ -44,18 +44,18 @@ function sendForm(form) {
 
 //empfangen von Daten und anzeigen der Tabelle
 function getPlayers(fav) {
-	var xhr = new XMLHttpRequest();
+	var xhr = new XMLHttpRequest(); // new HttpRequest instance 
 	var obFavPlayer = "";
 	if (fav) {
 		obFavPlayer = "?favorites=true";
 	}
 	xhr.open("GET", "http://139.59.134.26/api/players"+ obFavPlayer, true);
-	xhr.setRequestHeader("Content-type","application/json");
+	xhr.setRequestHeader("Content-Type","application/json");
 	xhr.onload = function(e) {
 		var data = JSON.parse(this.response);
 		buildTable(data);
 	}
-	xhr.send();
+	xhr.send(null);
 }
 
 //aufbau einer Tabelle
