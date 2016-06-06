@@ -1,12 +1,16 @@
 ﻿
 var playersAll = require('.data/playersAll.json');
 var playersFav = require('.data/playersFav.json');
-
+var http = require("http");            
 var express = require('express');
 var app = express();
 
 var ipAddr = '127.0.0.1';
 var port = '8080';
+
+http.createServer(function(req, res){
+	res.writeHead(200, {"Content-Type":"text/json"});
+});
 
 app.get("/", function(req, res){
 	res.send("Hello GET!");
