@@ -4,13 +4,11 @@ var playersFav = require('.data/playersFav.json');
 var http = require("http");            
 var express = require('express');
 var app = express();
-
 var ipAddr = '127.0.0.1';
 var port = '8080';
+var server = http.createServer(app);
 
-http.createServer(function(req, res){
-	res.writeHead(200, {"Content-Type":"text/json"});
-});
+app.use(bodyParser.json({limit: '1mb'}));
 
 app.get("/", function(req, res){
 	res.send("Hello GET!");
@@ -65,6 +63,6 @@ app.put('/api/players/:id', (req, res)=>{
 });
 
 
-var server=app.listen(port ,ipAddr, function(){
+server.listen(port ,ipAddr, function(){
     console.log('%s listening at %s ', server.name , server.url);
 });
