@@ -1,21 +1,15 @@
-var app = require("express");
-var conf = require('./config.json');
+const express = require('express');
+const app = express();
 
 var ipAddr = '127.0.0.1';
 var port = '8080';
 
-
-app.configure(function(){
-	// statische Dateien ausliefern
-	app.use(express.static(__dirname + '/public'));
-});
-
-app.use(bodyParser.json({limit: '1mb'}));
-app.use('/home.html',express.static(__dirname + '/home') )
-app.use('/index.html',express.static(__dirname + '/index') )
-app.use('/players.html', express.static(__dirname + '/players'))
+app.use(express.static(__dirname + "/html"));
+app.use('/design',express.static(__dirname + '/design') )
+app.use('/img',express.static(__dirname + '/img') )
+app.use('/javascript', express.static(__dirname + '/javascript'))
 
 //Webserver auf den Port schalten
-var server = app.listen(port ,host, function(){
-    console.log('%s listening at %s ', app.name , app.url);
+var server = app.listen(port ,function(){
+    console.log(' listening at ' + ipAddr + ":" +port);
 });
