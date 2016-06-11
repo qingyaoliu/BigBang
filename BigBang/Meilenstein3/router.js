@@ -1,7 +1,7 @@
 module.exports = function(app){
 const bodyParser = require('body-parser');
 const cors = require('cors');
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 app.use(cors());
 
 var data = require('./players.json');
