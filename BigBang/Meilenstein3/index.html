@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html lang="de">
+<html>
+
+<head>
+  <title>index.html</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="mystyle.css" type="text/css" />
+  <script type="text/javascript" src="javascript/index.js"></script>
+
+</head>
+
+<body>
+<!--das obere Teil-->
+  <div class="topT">
+	<span class="logo"><img src="img/logo.png" alt="das ist ein Logo" /></span>
+	<span class="verein">Bigbang Basketball Club</span>
+	<span class="knopf">
+	    <a href="home.html">home&nbsp&nbsp&nbsp</a>
+	    <a href="index.html">add player&nbsp&nbsp&nbsp</a>
+	    <a href="players.html">players</a>
+	</span>
+  </div>
+<!--das linke-untere Teil-->
+  <div class="leftT">	
+	<img src="img/basketball.jpg" alt="das ist ein Bild" height="358" width="537"/>
+  </div>
+
+<!--das rechte-untere Teil-->
+  <div class="rightT">
+	<!--<form name="input" action="http://martinakraus.net/createPlayer.php" method="get">-->
+	<form name="input">
+		<fieldset>
+		<table border="0" cellpadding="10" width="80%" >
+			<legend>HERZLICH WILLKOMMEN!</legend>
+			<tr >
+			    <td>Vorname</td>
+			    <td><label><input name="vorname" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
+			</tr>
+
+			<tr >
+			    <td>Nachname:</td>
+			    <td><label><input name="name" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
+			</tr>
+			<tr >
+			    <td>Verein:</td>
+			    <td><label><input name="verein" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
+			</tr>
+
+			<tr >
+			    <td>Headcoach:</td>
+			    <td><label><input name="hcoach" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
+			</tr>
+
+			<tr >
+			    <td>Assistant Coach:</td>
+			    <td><label><input name="acoach" type="text" maxlength="25" pattern="[A-Za-zäöüÄÖÜ]+" required><label></td>    
+			</tr>
+
+			<tr >
+			    <td>Aktiv:</td>
+			    <td><label><input name="aktiv" type="Checkbox" value="ja">&nbspja<label></td> 
+			</tr>
+
+			<tr >
+			    <td>Position:</td>
+			    <td><label>
+				<select name="position" type="dropdownmenü" required>
+				    <option value="Center">Center</option>
+				    <option value="Guard">Guard</option>
+				    <option value="Power Forward">Power Forward</option>
+				    <option value="Wing" selected="selected" >Wing</option>
+				    <option value="Small Forward">Small Forward</option>
+				</select>
+			    <label></td>    
+			</tr>
+
+			<tr >
+			    <td>Rückennumer:</td>
+			    <td><label><input name="number" type="number" min="4" max="15" required><label></td>    
+			</tr>
+
+			<tr >
+			    <td>Geburtsjahr:</td>
+			    <td><label><input name="jahr" type="number" min="0" max="2016" required><label></td>    
+			</tr>
+
+			<tr >
+			    <td>Favorit markieren:</td>
+			    <td><label><input name="favorit" type="checkbox" maxlength="25">&nbspfavorit<label></td>    
+			</tr>
+			
+			<tr>
+			    <td colspan="2" >
+			    <input type="button" value="submit" onclick="sendForm(this.form)">
+			    </td>
+			</tr>
+		</table>
+		</fieldset>
+	</form>
+  </div>
+</body>
+</html>
+
