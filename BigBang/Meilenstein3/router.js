@@ -6,7 +6,7 @@ const cors = require('cors');
 app.use(bodyParser.json);
 app.use(cors());
 
-var data = require('./playersAll.json');
+var data = require('./players.json');
 
 app.get("/", (req, res)=>{
 	res.end("Hello GET!");
@@ -20,9 +20,9 @@ app.get('/api/players', (req, res)=>{
 	var query = req.params.favorites || 'false';
 
 	if(query === 'true'){
-		res.json(200, {playersAll.filter(f=>f.favorit)});
+		res.json(200, {players.filter(f=>f.favorit)});
 	} else if(query === 'false'){
-		res.json(200, playersAll);
+		res.json(200, players);
 	} else {
 		res.json(404, {message: 'FAIL'});
 	}
@@ -32,7 +32,7 @@ app.get('/api/players', (req, res)=>{
 	var query = req.params.name;
 	
 	if(typeof req.query.search != "undefined"){
-		res.json(200, playersAll.filter((n)=>{n.name.charAt(0)=== req.query.search.toUpperCase()});
+		res.json(200, players.filter((n)=>{n.name.charAt(0)=== req.query.search.toUpperCase()});
 	else {
 		res.json(404, {message: 'The player was not found!'});
 	}
