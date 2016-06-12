@@ -1,0 +1,57 @@
+﻿*{ margin:0px; padding:0px;}
+
+body{
+   width:auto;
+   margin:0 auto;
+}
+.topT{
+   background-color:#4169e1; 
+   height:180px;
+   width:auto;
+}
+
+.leftT{
+   width:30%;
+   float:left;
+   margin:44px 0px 44px;
+}
+
+.rightT{
+   width:50%;
+   font-family: arial;
+   font-size:2em;
+   color:#FF4500;
+   margin:35px 30px 10px;
+   float:right;
+}
+
+.logo{
+   height:180px;
+   width:180px;
+}
+
+.verein{
+   height:180px;
+   width:70%;
+   font:bold 4em arial,sans-serift;
+   color:#f5deb3;
+}
+.knopf{
+   height:180px;
+   width:90%;
+   font:1.5em sans-serift;
+   color:#d2691e;
+   margin:60px;
+}
+
+td,input{
+   font-size:26px;
+   font-family:sans-serift;
+   color:#220088;
+}
+
+a{
+   text-decoration:none;
+}
+
+
