@@ -6,7 +6,7 @@
 <script>
 var socket = io.connect('http://localhost:8124'); 
 socket.on('connect', ()=> {
-    socket.emit('addme', prompt('Willkommen, bitte gebe deinen Usernamen ein')); 
+    socket.emit('addme', prompt('Welcome, please post your name')); 
 });
 socket.on('chat',(username, data)=>{ 
     var p = document.createElement('p'); 
