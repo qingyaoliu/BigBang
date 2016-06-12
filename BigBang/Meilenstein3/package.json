@@ -1,0 +1,17 @@
+{
+  "name": "bigbang",
+  "version": "0.0.1",
+  "description": "Webanwendungen HS Mannheim",
+  "author": "Liu, Yuan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qingyaoliu/BigBang"
+  },
+  "bugs": {
+    "url": "https://github.com/qingyaoliu/BigBang/issues"
+  },
+  "dependencies": {
+    "express": "~4.0.0"
+  },
+  "license": "MIT"
+}
