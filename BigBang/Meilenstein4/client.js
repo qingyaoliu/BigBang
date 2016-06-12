@@ -2,7 +2,7 @@
 
     var socket = io.connect();
     // neue Nachricht
-    socket.on('chat', (data)）=> {
+    socket.on('chat', (data)=> {
         ('#content').append(
             ('<li></li>').append(
                 // Uhrzeit
@@ -21,7 +21,7 @@
         ('body').scrollTop(('body')[0].scrollHeight);
     });
     // Nachricht senden
-    senden()=>{
+    function senden(){
         // Eingabefelder auslesen
         var name = ('#name').val();
         var text = ('#text').val();
