@@ -1,12 +1,16 @@
-(document).ready(function(){
-    // WebSocket
+(()=>{
+
     var socket = io.connect();
     // neue Nachricht
-    socket.on('chat', function (data) {
+    socket.on('chat', (data)）=> {
         ('#content').append(
             ('<li></li>').append(
                 // Uhrzeit
-                ('<span>').text:getTime();
+                ('<span>').text('[' +
+                (zeit.getHours() < 10 ? '0' + zeit.getHours() : zeit.getHours())
+                + ':' +
+                (zeit.getMinutes() < 10 ? '0' + zeit.getMinutes() : zeit.getMinutes())
+                + '] '
                 ),
                 // Name
                 ('<b>').text(typeof(data.name) != 'undefined' ? data.name + ': ' : ''),
@@ -17,7 +21,7 @@
         ('body').scrollTop(('body')[0].scrollHeight);
     });
     // Nachricht senden
-    function senden(){
+    senden()=>{
         // Eingabefelder auslesen
         var name = ('#name').val();
         var text = ('#text').val();
