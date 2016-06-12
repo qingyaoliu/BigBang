@@ -3,22 +3,22 @@
   <meta charset="utf-8">
   <title>Chat Room</title> 
   <script src="http://localhost:8124/socket.io/socket.io.js"></script> 
-<script>
-var socket = io.connect('http://localhost:8124'); 
-socket.on('connect', ()=> {
+  <script>
+  var socket = io.connect('http://localhost:8124'); 
+  socket.on('connect', ()=> {
     socket.emit('addme', prompt('Welcome, please post your name')); 
-});
-socket.on('chat',(username, data)=>{ 
+  });
+  socket.on('chat',(username, data)=>{ 
     var p = document.createElement('p'); 
     p.innerHTML = username + ': ' + data;
     document.getElementById('output').appendChild(p); 
-});
-window.addEventListener('load',()=> { 
+  });
+  window.addEventListener('load',()=> { 
     document.getElementById('sendtext').addEventListener('click',function() {
         var text = document.getElementById('data').value; 
         socket.emit('sendchat', text);
     }, false); 
-}, false);
+  }, false);
 
 </script>
   </head>
@@ -26,7 +26,7 @@ window.addEventListener('load',()=> {
     <div id="output">
     </div>
     <div id="send">
-    <input type="text" id="data" size="100" /><br />
+    <input type="text" id="data" border=0 size="100" /><br />
     <input type="button" id="sendtext" value="Send Text" />
     </div>
   </body>
