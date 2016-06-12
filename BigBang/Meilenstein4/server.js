@@ -1,37 +1,29 @@
-var   express = require('express');
-var   app = express();
-var   server = require('http').createServer(app);
-var   io = require('socket.io').listen(server);
-var   host = '127.0.0.1';
-var   port = '8080';
+var app = require('http').createServer(handler) 
+ , io = require('socket.io').listen(app)
+ , fs = require('fs');
+app.listen(8124);
 
-server.listen(port);
+function handler (req, res) { 
+ fs.readFile(__dirname + '/chat.html', (err, data) =>{
+     if (err) { 
+                res.writeHead(500);
+         return res.end('Error loading chat.html'); 
+            }
+     res.writeHead(200);
+     res.end(data); 
+        });
+}
+io.sockets.on('connection', socket=> {
+ socket.on('addme',username=> {
+  socket.username = username;
+  socket.emit('chat', 'SERVER', 'welcome '+username); 
+  socket.broadcast.emit('chat', 'SERVER', username + ' is on deck');
+ });
+ socket.on('sendchat', data=> { 
+  io.sockets.emit('chat', socket.username, data);
+ });
 
-	// statische Dateien ausliefern
-	app.use(express.static(__dirname + '/public'));
-
-	
-app.get('/', (req, res)=>{
-	// chat.html wird ausgegeben
-	res.sendFile(__dirname + '/public/chat.html');
+ socket.on('disconnect', ()=>{
+  io.sockets.emit('chat', 'SERVER', socket.username + ' has left the building');
+ });
 });
-
-
-
-io.sockets.on('connection', function (socket) {
-	// der Client ist verbunden
-	socket.emit('chat', { zeit: new Date(), text: 'Du bist nun mit dem Server verbunden!' });
-	// wenn ein Benutzer einen Text senden
-	socket.on('chat', function (data) {
-		// so wird dieser Text an alle anderen Benutzer gesendet
-		io.sockets.emit('chat', { zeit: new Date(), name: data.name || 'Anonym', text: data.text });
-	});
-});
-
-
-
-// Portnummer in die Konsole schreiben
-
-	console.log('Der Server läuft nun unter http://127.0.0.1:' + port + '/');
-
-	
