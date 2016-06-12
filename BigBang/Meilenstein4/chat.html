@@ -1,20 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Node.js Chat</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css" />
-        <script src="socket.io/socket.io.js"></script>
-        <script src="jquery.min.js"></script>
-        <script src="client.js"></script>
-    </head>
-    <body>
-        <header>simpel Chat <a href="http://127.0.0.1:8080/"></a></header>
-        <ul id="content"></ul>
-        <footer>
-            <input id="name" type="text" placeholder="dein Name" />
-            <input id="text" type="text" placeholder="schreibe etwas..." />
-            <input id="senden" type="submit" value="senden" />
-        </footer>
-    </body>
+<html lang="en"> 
+  <head>
+  <meta charset="utf-8">
+  <title>Chat Room</title> 
+  <script src="http://localhost:8124/socket.io/socket.io.js"></script> 
+<script>
+var socket = io.connect('http://localhost:8124'); 
+socket.on('connect', ()=> {
+    socket.emit('addme', prompt('Willkommen, bitte gebe deinen Usernamen ein')); 
+});
+socket.on('chat',(username, data)=>{ 
+    var p = document.createElement('p'); 
+    p.innerHTML = username + ': ' + data;
+    document.getElementById('output').appendChild(p); 
+});
+window.addEventListener('load',()=> { 
+    document.getElementById('sendtext').addEventListener('click',function() {
+        var text = document.getElementById('data').value; 
+        socket.emit('sendchat', text);
+    }, false); 
+}, false);
+
+</script>
+  </head>
+  <body>
+    <div id="output">
+    </div>
+    <div id="send">
+    <input type="text" id="data" size="100" /><br />
+    <input type="button" id="sendtext" value="Send Text" />
+    </div>
+  </body>
 </html>
