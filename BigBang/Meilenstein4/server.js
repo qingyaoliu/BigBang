@@ -28,7 +28,7 @@ function f(req, res) {
 // Socket.io
 io.on('connection', (socket) => {
 	
-	var addedUser = false;
+	let addedUser = false;
 	
 	socket.on('new message',  (data) => {
 		io.emit('new message', {
