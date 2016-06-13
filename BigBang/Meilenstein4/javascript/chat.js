@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
 
         function sendMessage() {
-            var message = input.val();
+            let message = input.val();
             if (message && username) {
                 input.val('');
                 socket.emit('new message', message);
