@@ -5,7 +5,7 @@ $(document).ready(function () {
     var box = $('#messages');
 
         function addUser() {
-            username = input.val();
+            let username = input.val();
             if (username) {
                 input.val('');
                 socket.emit('add user', username);
