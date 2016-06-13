@@ -8,7 +8,7 @@ const socket = io.connect('http://localhost:8080');
     document.getElementById('output').appendChild(p); 
   });
   window.addEventListener('load',()=> { 
-    document.getElementById('sendtext').addEventListener('click',function() {
+    document.getElementById('sendtext').addEventListener('click',()=> {
         let text = document.getElementById('data').value; 
         socket.emit('sendchat', text);
     }, false); 
