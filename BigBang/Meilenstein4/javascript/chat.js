@@ -36,12 +36,12 @@ $(document).ready(function () {
         }
 
         
-        socket.on('new message', function (data) {
+        socket.on('new message',  (data)  => {
             box.append(data.username + ": " + data.message + "\n");
             scrollToBottom(box);
         });
 
-        socket.on('user joined', function (data) {
+        socket.on('user joined',  (data)  =>  {
             box.append('welcome ' + data.username + "\n");
             scrollToBottom(box);
         });
