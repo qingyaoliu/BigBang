@@ -1,15 +1,48 @@
-const socket = io.connect('http://localhost:8080'); 
-  socket.on('connect', ()=> {
-    socket.emit('addme', prompt('Willkommen, bitte gebe deinen Username ein')); 
-  });
-  socket.on('chat',(username, data)=>{ 
-    var p = document.createElement('p'); 
-    p.innerHTML = username + ': ' + data;
-    document.getElementById('output').appendChild(p); 
-  });
-  window.addEventListener('load',()=> { 
-    document.getElementById('sendtext').addEventListener('click',function() {
-        var text = document.getElementById('data').value; 
-        socket.emit('sendchat', text);
-    }, false); 
-  }, false);
+$(document).ready(function () {
+    var socket = io();
+    var username;
+    var input = $('#msg');
+    var box = $('#messages');
+
+        function addUser() {
+            username = input.val();
+            if (username) {
+                input.val('');
+                socket.emit('add user', username);
+            }
+        }
+
+        function sendMessage() {
+            var message = input.val();
+            if (message && username) {
+                input.val('');
+                socket.emit('new message', message);
+            }
+        }
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+
+            if (username) {
+                sendMessage();
+            } else {
+                addUser();
+            }
+         });
+		 
+
+		function scrollToBottom(area) {
+            area.scrollTop(area[0].scrollHeight);
+        }
+
+        
+        socket.on('new message', function (data) {
+            box.append(data.username + ": " + data.message + "\n");
+            scrollToBottom(box);
+        });
+
+        socket.on('user joined', function (data) {
+            box.append('welcome ' + data.username + "\n");
+            scrollToBottom(box);
+        });
+});
