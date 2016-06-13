@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() =>{
     var socket = io();
     var username;
     var input = $('#msg');
@@ -20,7 +20,7 @@ $(document).ready(function () {
             }
         }
 
-        $('form').submit(function (e) {
+        $('form').submit( (e)=> {
             e.preventDefault();
 
             if (username) {
