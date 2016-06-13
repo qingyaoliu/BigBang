@@ -5,7 +5,7 @@ $(document).ready(function () {
     var box = $('#messages');
 
         function addUser() {
-            let username = input.val();
+            username = input.val();
             if (username) {
                 input.val('');
                 socket.emit('add user', username);
@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
 
         function sendMessage() {
-            let message = input.val();
+            message = input.val();
             if (message && username) {
                 input.val('');
                 socket.emit('new message', message);
