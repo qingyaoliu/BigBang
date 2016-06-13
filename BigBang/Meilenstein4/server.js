@@ -25,20 +25,29 @@ function f(req, res) {
   });
 }
 
-io.sockets.on('connection', socket=> {
- socket.on('addme',username=> {
-   socket.username = username;
-   socket.emit('chat', 'SERVER', 'welcome '+username); 
-   socket.broadcast.emit('chat', 'SERVER', username + ' joined');
- });
- socket.on('sendchat', data=> { 
-   io.sockets.emit('chat', socket.username, data);
- });
+// Socket.io
+io.on('connection', (socket) => {
+	
+	var addedUser = false;
+	
+	socket.on('new message',  (data) => {
+		io.emit('new message', {
+			username: socket.username,
+			message: data
+		});
+		
+	});
+	
+	socket.on('add user', (username) => {
+		if (addedUser) return;
+		
+		socket.username = username;
+		addedUser = true;
+		io.emit('user joined', {
+			username: socket.username
+		});
+	});
 
- socket.on('disconnect', ()=>{
-   io.sockets.emit('chat', 'SERVER', socket.username + ' left');
- });
- 
 });
 
 
