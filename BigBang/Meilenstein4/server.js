@@ -91,6 +91,6 @@ app.delete('/api/players/:id', (req, res) => {
 });
 
 
-http.listen(port ,localhost,function(){
+http.listen(port ,localhost,()=>{
     console.log('Server runs at ' + localhost + ":" +port);
 });
